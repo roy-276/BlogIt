@@ -29,7 +29,7 @@
 /* General Styling */
 
 * {
-  /* margin: 0; */
+  margin: 0;
   padding: 0;
   outline: 0;
   border: 0;
@@ -51,7 +51,7 @@ body {
 .container {
   width: var(--container-width-lg);
   max-width: 1800px;
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 section {
@@ -137,4 +137,38 @@ nav button {
   display: flex;
   align-items: center;
   gap: 4rem;
+}
+
+.nav_profile {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav_profile ul {
+  position: absolute;
+  top: 125%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.4);
+  visibility: hidden;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.nav_profile: hover > ul {
+  visibility: visible;
+  opacity: 1;
+}
+
+.nav_profile ul li a {
+  padding: 1rem;
+  background: var(--color-gray-900);
+  display: block;
+  width: 100%;
+}
+
+.nav_profile ul li:last-child a {
+  background: var(--color-red);
+  color: var(--color-bg);
 }
