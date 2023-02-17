@@ -240,3 +240,14 @@ nav button {
   gap: 3rem;
   margin: 5rem;
 }
+
+/* Category Buttons Styling */
+.category_buttons {
+  padding: 4rem 0;
+  border-top: 2px solid var(--color-gray-900);
+  border-bottom: 2px solid var(--color-gray-900);
+}
+
+.category_buttons-container {
+  width: fit-content;
+}
