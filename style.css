@@ -232,3 +232,11 @@ nav button {
 .featured .post_thumbnail {
   height: fit-content;
 }
+
+/* Posts Styling */
+.posts_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin: 5rem;
+}
