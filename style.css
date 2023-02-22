@@ -398,6 +398,7 @@ footer ul a:hover {
   }
 
   /* nav dropdown animation */
+
   @keyframes animateDropdown {
     0% {
       transform: rotateX(90deg);
@@ -444,5 +445,40 @@ footer ul a:hover {
   .footer_container {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
+  }
+}
+
+/* Media Queries (Medium Devices) */
+
+@media screen and (max-width: 600px) {
+  section {
+    margin-top: 2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .featured {
+    margin-top: 6rem;
+  }
+
+  .featured_container {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .posts_container {
+    grid-template-columns: 1fr;
+  }
+
+  .category_buttons-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer_container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
   }
 }
