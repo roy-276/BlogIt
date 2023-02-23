@@ -398,6 +398,14 @@ footer ul a:hover {
   place-items: center;
 }
 
+/* Empty Page Styling */
+
+.empty_page {
+  height: 70vh;
+  display: grid;
+  place-items: center;
+}
+
 /* Media Queries (Medium Devices) */
 
 @media screen and (max-width: 1024px) {
