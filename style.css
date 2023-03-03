@@ -550,6 +550,7 @@ select {
   cursor: default;
   transition: var(--transition);
 }
+
 /* Media Queries (Medium Devices) */
 
 @media screen and (max-width: 1024px) {
@@ -689,6 +690,35 @@ select {
 
   .form_section-container {
     padding: 3rem;
+  }
+
+  /* Dashboard Styling */
+
+  .dashboard_container {
+    grid-template-columns: 4.3rem auto;
+    padding: 0;
+    background: transparent;
+  }
+
+  .dashboard aside h5 {
+    display: none;
+  }
+
+  .dashboard main table th {
+    display: none;
+  }
+
+  .dashboard main table tr {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dashboard main table tr:nth-child(even) {
+    background: var(--color-gray-900);
+  }
+
+  .dashboard main table tr:hover td {
+    background: transparent;
   }
 }
 
