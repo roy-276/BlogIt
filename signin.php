@@ -1,43 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BlogIt</title>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlogIt</title>
 
-    <!-- Iconscout CDN -->
-    <link
-      rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
-    />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./css/style.css" />
 
-    <!-- Google Fonts Montserrat -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  <!-- Iconscout CDN -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
 
-  <body>
-    <!-- Form starts here -->
-    <section class="form_section">
-      <div class="container form_section-container">
-        <h2>Sign In</h2>
-        <div class="alert_message success">
-          <p>This is success message</p>
-        </div>
-        <form action="">
-          <input type="text" placeholder="Username or Email" />
-          <input type="password" placeholder="Password" />
-          <button type="submit" class="btn">Sign In</button>
-          <small>Create an account? <a href="signup.html">Sign Up</a></small>
-        </form>
+  <!-- Google Fonts Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Form starts here -->
+  <section class="form_section">
+    <div class="container form_section-container">
+      <h2>Sign In</h2>
+      <div class="alert_message success">
+        <p>This is success message</p>
       </div>
-    </section>
-    <!-- Form ends here -->
-  </body>
+      <form action="">
+        <input type="text" placeholder="Username or Email" />
+        <input type="password" placeholder="Password" />
+        <button type="submit" class="btn">Sign In</button>
+        <small>Create an account? <a href="signup.php">Sign Up</a></small>
+      </form>
+    </div>
+  </section>
+  <!-- Form ends here -->
+</body>
+
 </html>
