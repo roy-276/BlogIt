@@ -59,6 +59,12 @@ section {
   width: 100vw;
 }
 
+/* add to posts on index if theer's no featured post */
+
+.selection_extra-margin {
+  margin-top: 7rem;
+}
+
 h1,
 h2,
 h3,
@@ -447,6 +453,11 @@ footer ul a:hover {
 .alert_message.error {
   background: var(--color-red-light);
   color: var(--color-red);
+}
+
+/* centers alert  text */
+.alert_message.lg {
+  text-align: center;
 }
 
 form {
