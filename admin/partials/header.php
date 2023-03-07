@@ -31,7 +31,7 @@ require 'config/database.php';
                 <li><a href="<?= ROOT_URL ?>about.php">About</a></li>
                 <li><a href="<?= ROOT_URL ?>services.php">Services</a></li>
                 <li><a href="<?= ROOT_URL ?>contact.php">Contact</a></li>
-                <li><a href="<?= ROOT_URL ?>signin.php">SignIn</a></li>
+                <li><a href="<?= ROOT_URL ?>login.php">Login</a></li>
                 <li class="nav_profile">
                     <div class="avatar">
                         <img src="./images/avatar11.jpg" />

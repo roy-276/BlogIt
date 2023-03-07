@@ -1,3 +1,7 @@
+<?php
+require 'config/constants.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +12,7 @@
   <title>BlogIt</title>
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="<?= ROOT_URL ?>css/style.css" />
 
   <!-- Iconscout CDN -->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
@@ -21,14 +25,14 @@
   <!-- Form starts here -->
   <section class="form_section">
     <div class="container form_section-container">
-      <h2>Sign In</h2>
+      <h2>Login</h2>
       <div class="alert_message success">
         <p>This is success message</p>
       </div>
       <form action="">
         <input type="text" placeholder="Username or Email" />
         <input type="password" placeholder="Password" />
-        <button type="submit" class="btn">Sign In</button>
+        <button type="submit" class="btn">Login</button>
         <small>Create an account? <a href="signup.php">Sign Up</a></small>
       </form>
     </div>
