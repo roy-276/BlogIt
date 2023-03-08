@@ -1,5 +1,15 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 require 'config/constants.php';
+
+// get the data from the form
+$username_email = $_SESSION['login-data']['username_email'] ?? null;
+$password = $_SESSION['login-data']['password'] ?? null;
+
+// unset the session data
+unset($_SESSION['login_data']);
 ?>
 
 <!DOCTYPE html>
@@ -26,13 +36,25 @@ require 'config/constants.php';
   <section class="form_section">
     <div class="container form_section-container">
       <h2>Login</h2>
-      <div class="alert_message success">
-        <p>This is success message</p>
-      </div>
-      <form action="">
-        <input type="text" placeholder="Username or Email" />
-        <input type="password" placeholder="Password" />
-        <button type="submit" class="btn">Login</button>
+      <?php if (isset($_SESSION['signup-success'])) : ?>
+        <div class="alert_message success">
+          <p>
+            <?= $_SESSION['signup-success'];
+            unset($_SESSION['signup-success']); ?>
+          </p>
+        </div>
+      <?php elseif (isset($_SESSION['login'])) : ?>
+        <div class="alert_message error">
+          <p>
+            <?= $_SESSION['login'];
+            unset($_SESSION['login']); ?>
+          </p>
+        </div>
+      <?php endif; ?>
+      <form action="<?= ROOT_URL ?>login-logic.php" method="POST">
+        <input type="text" name="username_email" value="<?= $username_email ?>" placeholder="Username or Email" />
+        <input type="password" name="password" value="<?= $password ?>" placeholder="Password" />
+        <button type="submit" name="submit" class="btn">Login</button>
         <small>Create an account? <a href="signup.php">Sign Up</a></small>
       </form>
     </div>
