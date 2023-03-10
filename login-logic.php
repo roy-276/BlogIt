@@ -1,6 +1,7 @@
 <?php
 require 'config/database.php';
 
+// check if the form was submitted
 if (isset($_POST['submit'])) {
     // get form data, sanitize the data and check if the data is valid
     $username_email = filter_var($_POST['username_email'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);

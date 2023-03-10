@@ -21,7 +21,7 @@
           </a>
         </li>
 
-        // access to this page is restricted to admins
+        <!-- access to this page is restricted to admins  -->
         <?php if (isset($_SESSION['user_is_admin'])) : ?>
           <li>
             <a href="add-user.php"><i class="uil uil-user-plus"></i>
