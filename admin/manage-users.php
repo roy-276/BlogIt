@@ -1,8 +1,25 @@
 <?php
 include 'partials/header.php';
+
+// fetch all users from the database except the current admin
+$current_admin_id = $_SESSION['user-id'];
+
+$query = "SELECT * FROM users WHERE id != $current_admin_id";
+$users = mysqli_query($connection, $query);
 ?>
 
 <section class="dashboard">
+
+  <!-- Display success message if there is one -->
+  <?php if (isset($_SESSION['add-user-success'])) : ?>
+    <div class="alert_message success container">
+      <p><?= $_SESSION['add-user-success'];
+          // destroy the session data
+          unset($_SESSION['add-user-success']); ?>
+      </p>
+    </div>
+  <?php endif; ?>
+
   <div class="container dashboard_container">
     <button id="show_sidebar-btn" class="sidebar_toggle">
       <i class="uil uil-angle-right-b"></i>
@@ -61,39 +78,20 @@ include 'partials/header.php';
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>John Doe</td>
-            <td>john67</td>
-            <td>
-              <a href="edit-user.php" class="btn sm">Edit</a>
-            </td>
-            <td>
-              <a href="delete-user.php" class="btn sm danger">Delete</a>
-            </td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <td>Jane Doe</td>
-            <td>jane45</td>
-            <td>
-              <a href="edit-user.php" class="btn sm">Edit</a>
-            </td>
-            <td>
-              <a href="delete-user.php" class="btn sm danger">Delete</a>
-            </td>
-            <td>No</td>
-          </tr>
-          <tr>
-            <td>Charles Doe</td>
-            <td>charles</td>
-            <td>
-              <a href="edit-user.php" class="btn sm">Edit</a>
-            </td>
-            <td>
-              <a href="delete-user.php" class="btn sm danger">Delete</a>
-            </td>
-            <td>Yes</td>
-          </tr>
+          <!-- loop through all users and display them in a table -->
+          <?php while ($user = mysqli_fetch_assoc($users)) : ?>
+            <tr>
+              <td><?= "{$user['firstname']} {$user['lastname']}" ?></td>
+              <td><? $user['username'] ?></td>
+              <td>
+                <a href="<?= ROOT_URL ?>admin/edit-user.php?id=<?= $user['id'] ?>" class="btn sm">Edit</a>
+              </td>
+              <td>
+                <a href="<?= ROOT_URL ?>admin/delete-user.php?id=<?= $user['id'] ?>" class="btn sm danger">Delete</a>
+              </td>
+              <td><?= $user['is_admin'] ? 'Yes' : 'No' ?></td>
+            </tr>
+          <?php endwhile ?>
         </tbody>
       </table>
     </main>
