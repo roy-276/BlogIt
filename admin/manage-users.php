@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include 'partials/header.php';
 
 // fetch all users from the database except the current admin
@@ -10,16 +13,36 @@ $users = mysqli_query($connection, $query);
 
 <section class="dashboard">
 
-  <!-- Display success message if there is one -->
+  <!-- Display success message if the user was added successfully -->
   <?php if (isset($_SESSION['add-user-success'])) : ?>
+    // Display the success message
     <div class="alert_message success container">
       <p><?= $_SESSION['add-user-success'];
           // destroy the session data
           unset($_SESSION['add-user-success']); ?>
       </p>
     </div>
-  <?php endif; ?>
 
+    <!-- Display success message if the user was updated successfully -->
+  <?php elseif (isset($_SESSION['edit-user-success'])) : ?>
+    <!-- Display the success message -->
+    <div class="alert_message success container">
+      <p><?= $_SESSION['edit-user-success'];
+          // destroy the session data
+          unset($_SESSION['edit-user-success']); ?>
+      </p>
+    </div>
+
+    <!-- Display error message if the user was not updated successfully -->
+  <?php elseif (isset($_SESSION['edit-user'])) : ?>
+    <!-- Display the success message -->
+    <div class="alert_message error container">
+      <p><?= $_SESSION['edit-user'];
+          // destroy the session data
+          unset($_SESSION['edit-user']); ?>
+      </p>
+    </div>
+  <?php endif; ?>
   <div class="container dashboard_container">
     <button id="show_sidebar-btn" class="sidebar_toggle">
       <i class="uil uil-angle-right-b"></i>
