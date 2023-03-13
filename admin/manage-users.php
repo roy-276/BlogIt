@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 include 'partials/header.php';
 
 // fetch all users from the database except the current admin
@@ -42,7 +39,28 @@ $users = mysqli_query($connection, $query);
           unset($_SESSION['edit-user']); ?>
       </p>
     </div>
+
+    <!-- Display success message if the user was not deleted successfully -->
+  <?php elseif (isset($_SESSION['delete-user'])) : ?>
+    <!-- Display the success message -->
+    <div class="alert_message error container">
+      <p><?= $_SESSION['delete-user'];
+          // destroy the session data
+          unset($_SESSION['delete-user']); ?>
+      </p>
+    </div>
+
+    <!-- Display error message if the user was deleted successfully -->
+  <?php elseif (isset($_SESSION['delete-user-success'])) : ?>
+    <!-- Display the success message -->
+    <div class="alert_message success container">
+      <p><?= $_SESSION['delete-user-success'];
+          // destroy the session data
+          unset($_SESSION['delete-user-success']); ?>
+      </p>
+    </div>
   <?php endif; ?>
+
   <div class="container dashboard_container">
     <button id="show_sidebar-btn" class="sidebar_toggle">
       <i class="uil uil-angle-right-b"></i>
