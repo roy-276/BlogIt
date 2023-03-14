@@ -16,7 +16,7 @@
           </a>
         </li>
         <li>
-          <a href="index.php"><i class="uil uil-postcard"></i>
+          <a href="index.php" class="active"><i class="uil uil-postcard"></i>
             <h5>Manage Posts</h5>
           </a>
         </li>
@@ -27,7 +27,7 @@
             </a>
           </li>
           <li>
-            <a href="manage-users.php" class="active"><i class="uil uil-users-alt"></i>
+            <a href="manage-users.php"><i class="uil uil-users-alt"></i>
               <h5>Manage Users</h5>
             </a>
           </li>

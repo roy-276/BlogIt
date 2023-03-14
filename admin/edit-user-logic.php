@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
         if (mysqli_errno($connection)) {
             $_SESSION['edit-user'] = 'Error updating user in the database';
         } else {
-            $_SESSION['edit-user-success'] = "User $firstname $lastname updated successfully";
+            $_SESSION['edit-user-success'] = "User $firstname $lastname was updated successfully";
         }
     }
 }

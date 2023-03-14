@@ -12,7 +12,7 @@ $users = mysqli_query($connection, $query);
 
   <!-- Display success message if the user was added successfully -->
   <?php if (isset($_SESSION['add-user-success'])) : ?>
-    // Display the success message
+    <!-- Display the success message -->
     <div class="alert_message success container">
       <p><?= $_SESSION['add-user-success'];
           // destroy the session data
@@ -89,7 +89,7 @@ $users = mysqli_query($connection, $query);
             </a>
           </li>
           <li>
-            <a href="manage-users.php" class="active"><i class="uil uil-users-alt"></i>
+            <a href="manage-users.php" class="active  "><i class="uil uil-users-alt"></i>
               <h5>Manage Users</h5>
             </a>
           </li>

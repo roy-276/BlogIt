@@ -1,4 +1,5 @@
-<?php require 'config/database.php';
+<?php
+require 'config/database.php';
 
 if (isset($_GET['id'])) {
     // sanitize the id
