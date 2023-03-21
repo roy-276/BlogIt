@@ -18,7 +18,7 @@ $description = $_SESSION['add-category-data']['description'] ?? null;
     <?php endif; ?>
     <form action="<?= ROOT_URL ?>admin/add-category-logic.php" method="POST">
       <input type="text" value="<?= $title ?>" name="title" placeholder="Title" />
-      <textarea row="4" value="<?= $description ?>" name="description" placeholder="Description"></textarea>
+      <textarea row="4" name="description" placeholder="Description"><?= $category['description'] ?></textarea>
       <button type="submit" name="submit" class="btn">Add Category</button>
     </form>
   </div>

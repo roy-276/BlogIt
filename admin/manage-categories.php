@@ -7,6 +7,47 @@ $categories = mysqli_query($connection, $query);
 ?>
 
 <section class="dashboard">
+  <!-- Display success message if the category was added successfully -->
+  <?php if (isset($_SESSION['add-category-success'])) : ?>
+    <!-- Display the success message -->
+    <div class="alert_message success container">
+      <p><?= $_SESSION['add-category-success'];
+          // destroy the session data
+          unset($_SESSION['add-category-success']); ?>
+      </p>
+    </div>
+
+    <!-- Display success message if the category was not added successfully -->
+  <?php elseif (isset($_SESSION['add-category'])) : ?>
+    <!-- Display the success message -->
+    <div class="alert_message error container">
+      <p><?= $_SESSION['add-category'];
+          // destroy the session data
+          unset($_SESSION['add-category']); ?>
+      </p>
+    </div>
+
+    <!-- Display success message if the category was editted successfully -->
+  <?php elseif (isset($_SESSION['edit-category-success'])) : ?>
+    <!-- Display the success message -->
+    <div class="alert_message success container">
+      <p><?= $_SESSION['edit-category-success'];
+          // destroy the session data
+          unset($_SESSION['edit-category-success']); ?>
+      </p>
+    </div>
+
+    <!-- Display success message if the category was not editted successfully -->
+  <?php elseif (isset($_SESSION['edit-category'])) : ?>
+    <!-- Display the success message -->
+    <div class="alert_message error container">
+      <p><?= $_SESSION['edit-category'];
+          // destroy the session data
+          unset($_SESSION['edit-category']); ?>
+      </p>
+    </div>
+
+  <?php endif; ?>
   <div class="container dashboard_container">
     <button id="show_sidebar-btn" class="sidebar_toggle">
       <i class="uil uil-angle-right-b"></i>
@@ -68,10 +109,10 @@ $categories = mysqli_query($connection, $query);
               <tr>
                 <td><?= $category['title'] ?></td>
                 <td>
-                  <a href="<?= ROOT_URL ?> admin/edit-category.php?id=<?= $category['id'] ?>" class="btn sm">Edit</a>
+                  <a href="<?= ROOT_URL ?>admin/edit-category.php?id=<?= $category['id'] ?>" class="btn sm">Edit</a>
                 </td>
                 <td>
-                  <a href="<?= ROOT_URL ?> delete-category.php?id=<?= $category['id'] ?>" class="btn sm danger">Delete</a>
+                  <a href="<?= ROOT_URL ?>delete-category.php?id=<?= $category['id'] ?>" class="btn sm danger">Delete</a>
                 </td>
               </tr>
             <?php endwhile; ?>
