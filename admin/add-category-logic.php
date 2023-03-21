@@ -1,13 +1,6 @@
 <?php
 require 'config/database.php';
 
-// get the form data from the session if invalid form data was submitted
-$title = $_SESSION['add-category-data']['title'] ?? null;
-$description = $_SESION['add-category-data']['description'] ?? null;
-
-// unset the session variable
-unset($_SESSION['add-category-data']);
-
 if (isset($_POST['submit'])) {
 
     // get updated form data and sanitize them
