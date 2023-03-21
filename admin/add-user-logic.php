@@ -56,7 +56,6 @@ if (isset($_POST['submit'])) {
                     if ($avatar['size'] < 2097152) {
                         // Upload the avatar to the images folder
                         move_uploaded_file($avatar_tmp_name, $avatar_destination_path);
-                        echo 'Avatar uploaded successfully';
                     } else {
                         $_SESSION['add-user'] = 'Avatar size must be less than 2MB';
                     }

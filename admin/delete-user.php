@@ -33,5 +33,5 @@ if (isset($_GET['id'])) {
 }
 
 // redirect to the manage users page
-header('localhost: ' . ROOT_URL . 'admin/manage-users.php');
+header('location: ' . ROOT_URL . 'admin/manage-users.php');
 die();
