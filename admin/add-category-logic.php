@@ -1,6 +1,10 @@
 <?php
 require 'config/database.php';
 
+// get the form data from the session if invalid form data was submitted
+$text = $_SESSION['add-category-data']['title'] ?? null;
+$description = $_SESSION['add-category-data']['description'] ?? null;
+
 if (isset($_POST['submit'])) {
 
     // get updated form data and sanitize them
@@ -30,7 +34,7 @@ if (isset($_POST['submit'])) {
             header("location: " . ROOT_URL . "admin/add-category.php");
             die();
         } else {
-            $_SESSION['add-category-success'] = "Category $title was added successfully";
+            $_SESSION['add-category-success'] = "$title category was added successfully";
             header("location: " . ROOT_URL . "admin/manage-categories.php");
             die();
         }

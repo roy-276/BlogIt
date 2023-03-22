@@ -47,6 +47,26 @@ $categories = mysqli_query($connection, $query);
       </p>
     </div>
 
+    <!-- Display success message if the category was deleted successfully -->
+  <?php elseif (isset($_SESSION['delete-category-success'])) : ?>
+    <!-- Display the success message -->
+    <div class="alert_message success container">
+      <p><?= $_SESSION['delete-category-success'];
+          // destroy the session data
+          unset($_SESSION['delete-category-success']); ?>
+      </p>
+    </div>
+
+    <!-- Display success message if the category was not deleted successfully -->
+  <?php elseif (isset($_SESSION['delete-category'])) : ?>
+    <!-- Display the success message -->
+    <div class="alert_message error container">
+      <p><?= $_SESSION['delete-category'];
+          // destroy the session data
+          unset($_SESSION['delete-category']); ?>
+      </p>
+    </div>
+
   <?php endif; ?>
   <div class="container dashboard_container">
     <button id="show_sidebar-btn" class="sidebar_toggle">
@@ -112,7 +132,7 @@ $categories = mysqli_query($connection, $query);
                   <a href="<?= ROOT_URL ?>admin/edit-category.php?id=<?= $category['id'] ?>" class="btn sm">Edit</a>
                 </td>
                 <td>
-                  <a href="<?= ROOT_URL ?>delete-category.php?id=<?= $category['id'] ?>" class="btn sm danger">Delete</a>
+                  <a href="<?= ROOT_URL ?>admin/delete-category.php?id=<?= $category['id'] ?>" class="btn sm danger">Delete</a>
                 </td>
               </tr>
             <?php endwhile; ?>
