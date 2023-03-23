@@ -16,7 +16,9 @@ unset($_SESSION['add-user-data']);
 <section class="form_section">
   <div class="container form_section-container">
     <h2>Add User</h2>
-    <?php if (isset($_SESSION['add-user'])) : ?>
+    <?php
+    // if there is an error message, show it
+    if (isset($_SESSION['add-user'])) : ?>
       <div class="alert_message error">
         <p><?= $_SESSION['add-user'];
             unset($_SESSION['add-user']); ?>
